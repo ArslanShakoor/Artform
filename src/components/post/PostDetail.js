@@ -84,7 +84,7 @@ class PostDetail extends Component {
       );
     });
   };
-  postReplies(list) {
+  postReplies = list => {
     return _.map(list, reply => {
       return (
         <div className="post-replies" key={Math.random()}>
@@ -94,15 +94,15 @@ class PostDetail extends Component {
         </div>
       );
     });
-  }
-  findIndex() {
+  };
+  findIndex = () => {
     const index = this.state.item
       ? this.state.item.length - 1
       : this.props.location.state.item;
 
     return index;
-  }
-  async onSubmitReply(values) {
+  };
+  onSubmitReply = async values => {
     this.props.reset();
     const index = this.findIndex();
 
@@ -120,7 +120,7 @@ class PostDetail extends Component {
       item: newTodo
     });
     this.child.reset();
-  }
+  };
 
   onCancel = () => {
     this.props.history.push({
