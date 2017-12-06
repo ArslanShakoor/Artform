@@ -85,11 +85,23 @@ class Main extends Component {
     var strTime = hours + ':' + minutes + ' ' + ampm;
     return strTime;
   };
+  addFirstMessage = () => {
+    if (this.props.location.state == null) {
+      return (
+        <div className="first-message">
+          There are current no posts ...add one
+        </div>
+      );
+    } else {
+      return null;
+    }
+  };
   render() {
     console.log(this.props);
     return (
       <div className="main">
         <h1>The Fairygodboss Message Board</h1>
+        {this.addFirstMessage()}
         <div className="post-">{this.postData(this.state.item)}</div>
         <button
           className="btn btn-primary btn-lg

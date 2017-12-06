@@ -18,7 +18,7 @@ textarea {
   margin-bottom: 20px;
   width: 50%;
   position: absolute;
-  bottom: 0;
+  top: 92%;
 }
 .btn-new-div {
   margin-top: 100px;
@@ -39,6 +39,7 @@ textarea {
 .error {
   color: red;
 }
+
 .form {
   margin-top: 40px;
   margin-bottom: 20px;
@@ -63,6 +64,11 @@ textarea {
   display: none;
   padding-right: 10px;
   float: right;
+}
+.first-message {
+  top: 50%;
+  align-self: center;
+  position: absolute;
 }
 
 .post-detail {
