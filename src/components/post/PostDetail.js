@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import update from 'react-addons-update';
-import { reset } from 'redux-form';
 import _ from 'lodash';
 import field from '../../utils/field';
 import { reduxForm, Field } from 'redux-form';
@@ -121,8 +120,8 @@ class PostDetail extends Component {
       item: newTodo
     });
     this.child.reset();
-    console.log(this.state.item);
   }
+
   onCancel = () => {
     this.props.history.push({
       pathname: '/',

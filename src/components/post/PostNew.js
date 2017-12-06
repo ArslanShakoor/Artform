@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 class PostNew extends Component {
   constructor(props) {
     super(props);
-    console.log('express');
+
     this.state = {
       item: this.props.location.state.item
     };
@@ -71,7 +71,6 @@ class PostNew extends Component {
   }
 
   render() {
-    console.log('a');
     const { handleSubmit } = this.props;
     return (
       <div>

@@ -51,7 +51,7 @@ class Main extends Component {
                 </span>
               </div>
               <div className="col-md-1 arrow">
-                <img src={arrow} className="img-arrow" />
+                <img src={arrow} className="img-arrow" alt="forward" />
               </div>
             </div>
           </Link>
