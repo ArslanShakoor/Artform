@@ -159,6 +159,9 @@ textarea {
     float: none;
     padding-left: 20px;
   }
+  .main .date {
+    display: inline;
+  }
   .btn-back,
   .reply-back-hr {
     display: none;
