@@ -3,7 +3,8 @@ import { reduxForm, Field } from 'redux-form';
 import validate from './postValidate';
 import _ from 'lodash';
 import postFields from './postFields';
-import field from '../../utils/field';
+import field from '../utils/form/field';
+import renderForm from '../utils/form/renderForm';
 import { connect } from 'react-redux';
 
 class PostNew extends Component {
@@ -31,23 +32,6 @@ class PostNew extends Component {
     var strTime = hours + ':' + minutes + ' ' + ampm;
     return strTime;
   };
-
-  renderFields() {
-    return _.map(postFields, ({ name, label, type, req, design, rows }) => {
-      return (
-        <Field
-          key={name}
-          label={label}
-          name={name}
-          type={type}
-          design={design}
-          rows={rows}
-          req={req}
-          component={field}
-        />
-      );
-    });
-  }
 
   onCancel = () => {
     this.props.history.push({
@@ -77,7 +61,7 @@ class PostNew extends Component {
         <h1>Create New Post</h1>
         <div className="form">
           <form onSubmit={handleSubmit(this.onCreatePost.bind(this))}>
-            <div>{this.renderFields()}</div>
+            <div>{renderForm(postFields)}</div>
             <div className="btn-new-div">
               <button
                 onClick={this.onCancel}

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import update from 'react-addons-update';
 import _ from 'lodash';
-import field from '../../utils/field';
+import field from '../utils/form/field';
+import renderForm from '../utils/form/renderForm';
 import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
 import validate from './postValidate';
@@ -15,25 +16,7 @@ class PostDetail extends Component {
       item: this.props.location.state.item
     };
   }
-  renderFields = () => {
-    return _.map(
-      postReplyFields,
-      ({ name, label, type, req, design, rows }) => {
-        return (
-          <Field
-            key={name}
-            label={label}
-            name={name}
-            type={type}
-            design={design}
-            rows={rows}
-            req={req}
-            component={field}
-          />
-        );
-      }
-    );
-  };
+
   getFormatDate = (val, par) => {
     let cts = val;
     if (cts) {
@@ -145,7 +128,9 @@ class PostDetail extends Component {
         <div className="form">
           <form onSubmit={handleSubmit(this.onSubmitReply.bind(this))}>
             <div className="row">
-              <div className="col-md-8 col-xs-12">{this.renderFields()}</div>
+              <div className="col-md-8 col-xs-12">
+                {renderForm(postReplyFields)}
+              </div>
               <div className="col-md-4 col-xs-12 vcenter">
                 <button
                   type="submit"
