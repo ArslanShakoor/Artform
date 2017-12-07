@@ -3,10 +3,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ##Target Achieved
 
-Basic flow of app and validation. 
+Basic flow of app and validation.
 
 ###important
-added Utility folder with the help of utility folder we can render all type of form and this gives our app much more resusability. we can also make many reuseable for functional components for like data and time etc.
+added Utility folder with the help of utility folder we can render all type of form and fields and this gives our app much more resusability. we can also make many reuseable for functional components for like date and time etc.
 
 
 ###Important Library or packages used(Dependencies)
@@ -27,6 +27,3 @@ Twitter Bootsrtrap
 3: `npm install`
 
 4: `npm start`
-
-
-   
