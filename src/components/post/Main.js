@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
 import './css/index.css';
+import formatDate from '../utils/calander/formatDate';
+import formatTime from '../utils/calander/formatTime';
 import arrow from '../../images/play-arrow.png';
 class Main extends Component {
   constructor(props) {
@@ -46,8 +48,7 @@ class Main extends Component {
                 </span>
                 <span className="date">
                   Last Updated:
-                  {this.getFormatDate(post.time)} @{' '}
-                  {this.getFormatTime(post.time)}
+                  {formatDate(post.time)} @ {formatTime(post.time)}
                 </span>
               </div>
               <div className="col-md-1 arrow">
@@ -68,23 +69,7 @@ class Main extends Component {
       return `${length} comments`;
     }
   };
-  getFormatDate = (val, par) => {
-    let cts = val;
-    if (cts) {
-      return new Date(cts).toLocaleDateString('en-US');
-    }
-  };
 
-  getFormatTime = date => {
-    var hours = date.getHours();
-    var minutes = date.getMinutes();
-    var ampm = hours >= 12 ? 'pm' : 'am';
-    hours = hours % 12;
-    hours = hours ? hours : 12; // the hour '0' should be '12'
-    minutes = minutes < 10 ? '0' + minutes : minutes;
-    var strTime = hours + ':' + minutes + ' ' + ampm;
-    return strTime;
-  };
   addFirstMessage = () => {
     if (this.props.location.state == null) {
       return (

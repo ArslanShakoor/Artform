@@ -3,6 +3,8 @@ import update from 'react-addons-update';
 import _ from 'lodash';
 import field from '../utils/form/field';
 import renderForm from '../utils/form/renderForm';
+import formatDate from '../utils/calander/formatDate';
+import formatTime from '../utils/calander/formatTime';
 import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
 import validate from './postValidate';
@@ -17,24 +19,6 @@ class PostDetail extends Component {
     };
   }
 
-  getFormatDate = (val, par) => {
-    let cts = val;
-    if (cts) {
-      return new Date(cts).toLocaleDateString('en-US');
-    }
-  };
-
-  getFormatTime = date => {
-    var hours = date.getHours();
-    var minutes = date.getMinutes();
-    var ampm = hours >= 12 ? 'pm' : 'am';
-    hours = hours % 12;
-    hours = hours ? hours : 12; // the hour '0' should be '12'
-    minutes = minutes < 10 ? '0' + minutes : minutes;
-    var strTime = hours + ':' + minutes + ' ' + ampm;
-    return strTime;
-  };
-
   postDetail = list => {
     console.log(list);
     return _.map(list, post => {
@@ -48,8 +32,7 @@ class PostDetail extends Component {
                 By:{post.user ? post.user : 'Anonymous'}
               </div>
               <div className="date">
-                On: {this.getFormatDate(post.time)}{' '}
-                {this.getFormatTime(post.time)}
+                On: {formatDate(post.time)} {formatTime(post.time)}
               </div>
             </div>
             <div className="col-md-3">
