@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
 import './css/index.css';
-import formatDate from '../utils/calander/formatDate';
-import formatTime from '../utils/calander/formatTime';
+import formatDate from '../utils/calender/formatDate';
+import formatTime from '../utils/calender/formatTime';
 import arrow from '../../images/play-arrow.png';
 class Main extends Component {
   constructor(props) {
