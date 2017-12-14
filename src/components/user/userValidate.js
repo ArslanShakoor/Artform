@@ -1,9 +1,9 @@
-import postFields from './postFields';
+import userBioField from './userBioField';
 import _ from 'lodash';
 
 export default values => {
   const errors = {};
-  _.each(postFields, ({ name, req, min_length, max_length }) => {
+  _.each(userBioField, ({ name, req, min_length, max_length }) => {
     if (!values[name] && req) {
       errors[name] = `Please enter the ${name}`;
     } else if (

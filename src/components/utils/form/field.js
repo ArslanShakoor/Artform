@@ -1,7 +1,7 @@
 /* made this utility which can be very helpful in future all type of Forms and theri in
 the application can easily be rendered and can also use in other applications as well
 */
-import '../../post/css/index.css';
+import '../../user/css/index.css';
 
 import React from 'react';
 
