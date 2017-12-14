@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Basic flow of app and validation.
 
 ### important
-added Utility folder with the help of utility folder we can render all type of form and fields and this gives our app much more reusability. we can also make many reusable for functional components for like date and time etc.
+added Utility folder with the help of utility folder we can render all type of form and fields and this gives our app much more reusability. 
 
 
 ### Important Library or packages used(Dependencies)
