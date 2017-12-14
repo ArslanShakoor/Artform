@@ -22,9 +22,9 @@ Twitter Bootsrtrap
 ### How to run the app
 1: download the app
 
-2: `cd fairygodboss-master`
+2: `cd Artform-master`
 
 3: `npm install`
 
 4: `npm start`
-# Artform
+
